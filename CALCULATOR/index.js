@@ -1,28 +1,19 @@
-//CALCULATOR PROGRAM
-
-const display=document.getElementById("display");
-
-function appendToDisplay(input){
-    display.value += input;
-
+let outputscreen = document.getelementbyId("outputscreen");
+function display(num){
+    outputscreen.value += num;
 }
-
-function clearDisplay(){
-    display.value ="";
-
-}
-
 function calculate(){
-
     try{
-        display.value = eval(display.value);
+        outputscreen.value = eval(outputscreen.value);
     }
-    catch{
-        display.value ="Error";
+    catch(err)
+    {
+        alert("Invalid");
     }
-
 }
-
+function clear(){
+    outputscreen.value =" ";
+}
 function del(){
-    display.value=display.value.slice(0,-1);
+    outputscreen.value=outputscreen.value.slice(0,-1);
 }
